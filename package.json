@@ -1,0 +1,19 @@
+{
+  "name": "forecastapp",
+  "version": "1.0.0",
+  "description": "A simple web application show the next 5 days forecast of a specific location in the world",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boris-felix/forecastapp.git"
+  },
+  "author": "Boris FELIX",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/boris-felix/forecastapp/issues"
+  },
+  "homepage": "https://github.com/boris-felix/forecastapp#readme"
+}
