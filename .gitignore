@@ -1,6 +1,7 @@
 .DS_Store
 node_modules/
-public/
+public/js
+public/css
 !*/fonts
 /fonts
 npm-debug.log
