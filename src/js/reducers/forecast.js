@@ -1,7 +1,7 @@
 import Moment from 'moment';
 import { chain } from 'lodash';
 
-const Reducer = (state = { list: 'toto' }, action) => {
+const Reducer = (state = {}, action) => {
 	let { type, values } = action;
 
 	switch (type) {
@@ -16,12 +16,11 @@ const Reducer = (state = { list: 'toto' }, action) => {
 							hour: dt_txt.split(' ')[1],
 							temp: main.temp,
 							weather
-						}
+						};
 					})
 					.groupBy('day')
 					.value()
-			}
-		break;
+			};
 	}
 
 	return state;

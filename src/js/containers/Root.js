@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import Layout from './Layout';
+import ForecastList from './ForecastList';
 
-const Root = (element, store) => {
+const Root = (element, store, city) => {
 	ReactDOM.render(
 		<Provider store={store}>
-			<Layout />
+			<div>
+				<h1>{city}</h1>
+				<ForecastList />
+			</div>
 		</Provider>,
 		element
 	)

@@ -3,9 +3,8 @@ import { connect } from 'react-redux';
 import ForecastList from '../components/ForecastList';
 
 const ForecastListContainer = (props) => <ForecastList {...props} />
-const mapStateToProps = () => {
-	console.log(arguments);
-	return {};
-};
+const a = ({ forecast }) => ({ list: forecast.list });
 
-export default connect(mapStateToProps)(ForecastListContainer);
+const Container = connect(a)(ForecastListContainer);
+
+export default Container;

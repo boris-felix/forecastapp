@@ -1,19 +1,16 @@
 import ReactDOM from 'react-dom';
 import Root from './containers/Root';
-import createStore from './store';
 import DataFeeder from './initializer/DataFeeder';
+import Store from './store';
 
 class ForecastApp {
 	constructor (domContainerId, city) {
-		this.domContainer = document.getElementById(domContainerId);
-		this.city = city;
-		this.store = createStore();
-
-		this.dataFeed = new DataFeeder(this.store);
+		let domContainer = document.getElementById(domContainerId);
+		let dataFeed = DataFeeder.fetch(Store, city);
 
 		// Connect React dom render to redux store
 		setTimeout(
-			() => Root(this.domContainer, this.store),
+			() => Root(domContainer, Store, city),
 			300
 		);
 	}

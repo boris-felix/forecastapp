@@ -1,13 +1,6 @@
-import { compose, createStore, applyMiddleware } from 'redux';
+import { compose, createStore } from 'redux';
 import reducers from './reducers';
-import ForecastMiddleWare from './middleware/forecast';
 
-const Store = () => {
-	const createStoreWithMiddleware = compose(
-		applyMiddleware()
-	)(createStore);
+const createStoreWithMiddleware = compose()(createStore);
 
-	return createStoreWithMiddleware(reducers);
-};
-
-export default Store;
+export default createStoreWithMiddleware(reducers);
