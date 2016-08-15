@@ -1,19 +1,20 @@
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
-	devServer: {
-		contentBase: "./public",
-		noInfo: false
-	},
 	entry : {
 		app: './src/js/app.js'
 	},
 	output : {
-		filename : './public/js/app.js',
+		filename : './public/js/forecastapp.js',
 		publicPath: 'public'
 	},
 	module: {
 		loaders: [
+			{
+				test: /\.js$/,
+				loader: 'envify-loader'
+			},
 			{
 				test: /\.jsx?$/,
 				include: [

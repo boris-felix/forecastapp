@@ -1,0 +1,58 @@
+{
+	"requireSpaceAfterKeywords": [					// Requires space after keyword.
+		"return",
+		"typeof",
+		"try",
+		"case",
+		"else",
+		"switch",
+		"for",
+		"while",
+		"do",
+		"if"
+	],
+	"disallowSpaceAfterKeywords": [					// Disallows space after keyword.
+		"catch",
+		"void",
+		"with",
+		"function"
+	],
+	"requireSpaceBeforeBlockStatements": true,		// Requires space before block statements (for loops, control structures).
+	"requireSpacesInConditionalExpression": true,	// Requires space before and/or after ? or : in conditional expressions.
+	"requireSpacesInFunction": {					// Requires space before () or {} in function declarations and expressions.
+		"beforeOpeningCurlyBrace": true
+	},
+	"disallowSpacesInFunction": {					// Disallows space before () or {} in function declarations and expressions.
+	    "beforeOpeningRoundBrace": true
+	},
+	"disallowSpacesInCallExpression": true,			// Disallows space before () in call expressions.
+	"disallowMultipleVarDecl": true,				// Disallows multiple var declaration (except for-loop).
+	"requireBlocksOnNewline": true,					// Requires blocks to begin and end with a newline.
+	"disallowPaddingNewlinesInBlocks": true,		// Disallows blocks from beginning and ending with 2 newlines.
+	"disallowEmptyBlocks": true,					// Disallows empty blocks (except for catch blocks).
+	"disallowSpaceAfterObjectKeys": true,			// Disallows space after object keys.
+	"requireSpaceBeforeObjectValues": true,			// Requires space after object keys.
+	"disallowSpaceAfterPrefixUnaryOperators": [		// Requires sticking unary operators to the right.
+		"++",
+		"--",
+		"+",
+		"-",
+		"~",
+		"!"
+	],
+	"disallowSpaceBeforePostfixUnaryOperators": [	// Requires sticking unary operators to the left.
+		"++",
+		"--"
+	],
+	"disallowMixedSpacesAndTabs": true,				// Requires lines to not contain both spaces and tabs consecutively.
+	"disallowTrailingWhitespace": true,				// Requires all lines to end on a non-whitespace character.
+	"disallowTrailingComma": true,					// Disallows an extra comma following the final element of an array or object literal.
+	"disallowKeywordsOnNewLine": ["else"],			// Disallows placing keywords on a new line.
+	"disallowYodaConditions": true,					// Requires the variable to be the right hand operator when doing a boolean comparison
+	"requireSpaceAfterLineComment": true,			// Requires that a line comment (//) be followed by a space.
+	"disallowNewlineBeforeBlockStatements": true,	// Disallows newline before opening curly brace of all block statements.
+  	"validateIndentation": "\t",					// Validates indentation for switch statements and block statements.
+	"validateParameterSeparator": ", ",				// Enable validation of separators between function parameters.
+	"requireCapitalizedComments": true,				// Requires the first alphabetical character of a comment to be uppercase,
+	"requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties"
+}

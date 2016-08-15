@@ -12,7 +12,9 @@
 		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 		<meta http-equiv="Pragma" content="no-cache" />
 		<meta http-equiv="Expires" content="0" />
-		<link rel="stylesheet" href="/css/main.min.css?v=20160815-112507"/>
+		<!-- build:css /css/main.min.css?v=$BANNER -->
+		<link rel="stylesheet" href="/css/main.css">
+		<!-- /build -->
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,7 +25,9 @@
 	</head>
 	<body>
 		<div id="root"></div>
-		<script src="/js/forecastapp.min.js?v=20160815-112507"></script>
+		<!-- build:[src] /js/forecastapp.min.js?v=$BANNER -->
+		<script src="/js/forecastapp.js"></script>
+		<!-- /build -->
 		<script type="text/javascript">
 			var app = new ForecastApp('root', 'Biarritz');
 		</script>

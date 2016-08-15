@@ -1,0 +1,21 @@
+version: '2'
+services:
+    app:
+        build:
+            context: .
+            dockerfile: /deploy/app/Dockerfile
+        environment:
+            - DEBUG=false
+            - NODE_ENV=production
+        volumes:
+            - .:/var/www
+        restart: always
+    nginx:
+        build:
+            context: .
+            dockerfile: /deploy/nginx/Dockerfile
+        environment:
+            - DEBUG=false
+            - NODE_ENV=production
+        ports:
+            - "8080:8080"
