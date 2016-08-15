@@ -2,7 +2,10 @@
 node_modules/
 public/js
 public/css
+public/img
+public/fonts
 !*/fonts
 /fonts
 npm-debug.log
 dist
+.sass-cache

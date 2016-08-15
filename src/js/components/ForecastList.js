@@ -1,21 +1,16 @@
 import React from 'react';
 import _ from 'lodash';
-import Forecast from './Forecast';
+import Day from './Day';
 
 const ForecastList = ({ list }) => {
 	return (
-		<ul>{
-			_.map(list, (forecast, date) => {
+		<ul className="col-md-10">
+			{_.map(list, (forecast, date, list) => {
 				return (
-					<li key={date}>
-						<div>{date}</div>
-						<div>
-							<Forecast forecast={forecast} />
-						</div>
-					</li>
+					<Day forecast={forecast} date={date} key={date} />
 				);
-			})
-		}</ul>
+			})}
+		</ul>
 	);
 }
 

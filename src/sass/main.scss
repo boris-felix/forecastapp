@@ -18,7 +18,6 @@
 */
 /* Layout sections
 */
-@import 'layout/_bootstrap-extra-large-grid';
 @import 'layout/_layout';
 
 /*!
@@ -26,9 +25,3 @@
 */
 /* reusable/framework components */
 @import 'components/_components';
-
-/*!
-========== THEMES
-*/
-/* reusable/framework components */
-@import 'themes/test/_index';

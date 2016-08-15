@@ -9,7 +9,8 @@ module.exports = {
 		app: './src/js/app.js'
 	},
 	output : {
-		filename : './public/js/app.js'
+		filename : './public/js/app.js',
+		publicPath: 'public'
 	},
 	module: {
 		loaders: [

@@ -1,12 +1,34 @@
+import { chain, size, toArray } from 'lodash';
+
 const APP_ID = 'a898a3523830662b0223c37cfea04659';
 
 class DataFeeder {
 	static fetch (store, city) {
 		DataFeeder.get(city).then((r) => {
+			let { list } = r;
+			let values = chain(list)
+				.map(({ dt_txt, main, weather }) => {
+					return {
+						day: dt_txt.split(' ')[0],
+						hour: dt_txt.split(' ')[1],
+						temp: main.temp,
+						weather
+					};
+				})
+				.groupBy('day')
+				.value();
+
 			store.dispatch({
 				type: 'FORECAST',
-				values: r
+				values: values
 			});
+
+			if (size(values) > 0) {
+				store.dispatch({
+					type: 'CURRENT',
+					values: toArray(values)[0]
+				});
+			}
 		});
 	}
 
