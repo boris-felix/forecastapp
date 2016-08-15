@@ -2,12 +2,17 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
+	devServer: {
+		contentBase: "./public",
+		noInfo: false
+	},
 	entry : {
 		app: './src/js/app.js'
 	},
 	output : {
-		filename : './public/js/forecastapp.js',
-		publicPath: 'public'
+		filename: 'forecastapp.js',
+		path: path.resolve('public/js'),
+		publicPath: "/public/"
 	},
 	module: {
 		loaders: [

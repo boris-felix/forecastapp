@@ -14,6 +14,6 @@ class ForecastApp {
 			300
 		);
 	}
-}
+};
 
 window.ForecastApp = ForecastApp;

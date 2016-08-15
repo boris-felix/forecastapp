@@ -2,8 +2,7 @@
 node_modules/
 public/js
 public/css
-public/img
-public/fonts
+public/index.html
 !*/fonts
 /fonts
 npm-debug.log
