@@ -1,0 +1,10 @@
+.time {
+	list-style-type: none;
+	padding: 0px;
+
+	& .weather {
+		font-size: 30px;
+    	line-height: 30px;
+    	padding-bottom: 5px;
+	}
+}

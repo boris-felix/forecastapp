@@ -1,3 +1,34 @@
 .day {
 	margin: 0px;
+	border-bottom: 1px #000000 solid;
+	list-style-type: none;
+
+	& {
+		.header {
+			padding-top: 10px;
+			padding-bottom: 10px;
+			overflow: hidden;
+
+			.day--detail {
+				b, span {
+					padding: 0px;
+				}
+
+				b {
+					margin-right: 10px;
+				}
+			}
+		}
+
+		.details {
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+	}	
+
+	&.today {
+		.header {
+			border-bottom: 1px #000000 solid;
+		}
+	}	
 }

@@ -8,10 +8,14 @@ class DataFeeder {
 			let { list } = r;
 			let values = chain(list)
 				.map(({ dt_txt, main, weather }) => {
+					let { temp, temp_max, temp_min } = main;
+
 					return {
 						day: dt_txt.split(' ')[0],
 						hour: dt_txt.split(' ')[1],
-						temp: main.temp,
+						temp,
+						temp_min,
+						temp_max,
 						weather
 					};
 				})

@@ -1,0 +1,52 @@
+&.meteocons {
+	&:before {
+		font-family: 'MeteoconsRegular';
+	}
+
+	&.clear-day:before,
+	&.clear-sky:before {
+		content: 'B';
+	}
+
+	&.clear-night:before {
+		content: 'C';
+	}
+
+	&.wind:before {
+		content: 'F';
+	}
+
+	&.partly-cloudy-day:before,
+	&.few-clouds:before {
+		content: 'H';
+	}
+
+	&.partly-cloudy-night:before {
+		content: 'I';
+	}
+
+	&.overcast-clouds:before {
+		content: 'J';
+	}
+
+	&.fog:before {
+		content: 'M';
+	}
+
+	&.cloudy:before {
+		content: 'N';
+	}
+
+	&.light-rain:before {
+		content: 'Q';
+	}
+
+	&.rain:before {
+		content: 'R';
+	}
+
+	&.broken-clouds:before,
+	&.scattered-clouds:before {
+		content: 'Y';
+	}	
+}
