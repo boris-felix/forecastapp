@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+const { shape, arrayOf, string, number } = PropTypes;
+
 import Moment from 'moment';
 import Time from './Time';
 
@@ -16,13 +18,13 @@ const Day = ({ forecast, date }) => {
 	return (
 		<li className={dayClassName}>
 			<div className="header">
-				<span className="day--detail pull-left col-md-6">
+				<span className="day--detail pull-left col-md-6 col-sm-6 col-xs-6">
 					<b>{dayLabel}</b>
 					<span>{todayLabel}</span>
 				</span>
-				<span className="pull-right text-right col-md-6">
-					<b>Max: {temp_max}</b>
-					<span>Min: {temp_min}</span>
+				<span className="temp--detail pull-right text-right col-md-6 col-sm-6 col-xs-6">
+					<b>Max: {temp_max}°</b>
+					<span>Min: {temp_min}°</span>
 				</span>
 			</div>
 			<div className="details">
@@ -42,5 +44,23 @@ const Day = ({ forecast, date }) => {
 		</li>
 	);
 };
+
+Day.propTypes = {
+	forecast: arrayOf(
+		shape({
+			hour: string.isRequired,
+			temp: number.isRequired,
+			weather: arrayOf(
+				shape({
+					description: string.isRequired,
+					icon: string,
+					id: number,
+					main: string
+				})
+			)
+		})
+	),
+	date: string
+}.isRequired
 
 export default Day;

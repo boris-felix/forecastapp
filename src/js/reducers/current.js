@@ -6,7 +6,14 @@ const Reducer = (state = {}, action) => {
 
 	switch (type) {
 		case 'CURRENT':
-			return values;
+			let now = values[0];
+			let { temp, weather } = now;
+			let { description } = weather[0];
+
+			return {
+				temp,
+				description
+			};
 	}
 
 	return state;
