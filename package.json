@@ -4,7 +4,7 @@
   "description": "A simple web application show the next 5 days forecast of a specific location in the world",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --compilers js:babel-core/register src/**/__tests__",
     "start": "webpack -w"
   },
   "repository": {
@@ -36,8 +36,12 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
     "babel-runtime": "^6.11.6",
+    "chai": "^3.5.0",
+    "chai-enzyme": "^0.5.0",
+    "enzyme": "^2.4.1",
     "http-server": "^0.9.0",
     "imports-loader": "^0.6.5",
+    "mocha": "^3.0.2",
     "webpack": "^1.13.1"
   }
 }

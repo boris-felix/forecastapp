@@ -1,4 +1,8 @@
 import { chain, size, toArray } from 'lodash';
+import {
+    CURRENT,
+    FORECAST
+} from '../constants/actionTypes';
 
 const APP_ID = 'a898a3523830662b0223c37cfea04659';
 
@@ -23,13 +27,13 @@ class DataFeeder {
 				.value();
 
 			store.dispatch({
-				type: 'FORECAST',
+				type: FORECAST,
 				values: values
 			});
 
 			if (size(values) > 0) {
 				store.dispatch({
-					type: 'CURRENT',
+					type: CURRENT,
 					values: toArray(values)[0]
 				});
 			}
