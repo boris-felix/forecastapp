@@ -18,7 +18,7 @@ module.exports = {
 		loaders: [
 			{
 				test: /\.js$/,
-				loader: 'envify-loader'
+				loader: 'transform?envify'
 			},
 			{
 				test: /\.jsx?$/,

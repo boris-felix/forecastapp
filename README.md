@@ -42,19 +42,13 @@ Then connect yourself to the server by SSH and go into this folder.
 
 We assume that you have already installed to the complete docker toolbox. If not install it as described here : https://www.docker.com/products/docker#/linux
 
-Then :
+Then run this :
 
 ```
-docker-compose build
+./deploy/run.prod.sh
 ```
 
-That will install all the dependencies to build the project (Javascripts files and Css linting and minification) and the http server ( Nginx ).
-
-To run the project just type this :
-
-```
-docker-compose up
-```
+That will install all the dependencies to build the project (Javascripts files and Css linting and minification) and the http server ( Nginx ) and then run the web server.
 
 ### NOTE
 
@@ -67,6 +61,6 @@ docker-compose build nginx
 then
 
 ```
-docker-compose up nginx
+docker-compose up -d nginx
 ```
 
