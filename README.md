@@ -1,5 +1,7 @@
 # Forecast App
-A simple web application show the next 5 days forecast of a specific location in the world
+A simple web application showing the next 5 days forecast of a specific location in the world
+
+![](https://cloud.githubusercontent.com/assets/736122/17664430/da0a04e0-62eb-11e6-88ab-3c06a0c36ecc.png)
 
 ## DESCRIPTION
 
@@ -13,6 +15,12 @@ This version of the application is a bit similar to the IOS Weather app with :
 
 - Node and npm : https://nodejs.org/
 - Ruby and compass : http://compass-style.org/install/
+
+When that is done install the npm dependencies :
+
+```
+npm install
+```
 
 Then for running the http server and the js auto compilation :
 

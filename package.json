@@ -1,7 +1,7 @@
 {
   "name": "forecastapp",
   "version": "1.0.0",
-  "description": "A simple web application show the next 5 days forecast of a specific location in the world",
+  "description": "A simple web application showing the next 5 days forecast of a specific location in the world",
   "main": "index.js",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register src/**/__tests__",
