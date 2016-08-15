@@ -18,11 +18,11 @@ const Day = ({ forecast, date }) => {
 	return (
 		<li className={dayClassName}>
 			<div className="header">
-				<span className="day--detail pull-left col-md-6 col-sm-6 col-xs-6">
+				<span className="day--detail pull-left col-md-6 col-sm-4 col-xs-4">
 					<b>{dayLabel}</b>
 					<span>{todayLabel}</span>
 				</span>
-				<span className="temp--detail pull-right text-right col-md-6 col-sm-6 col-xs-6">
+				<span className="temp--detail pull-right text-right col-md-6 col-sm-8 col-xs-8">
 					<b>Max: {temp_max}°</b>
 					<span>Min: {temp_min}°</span>
 				</span>

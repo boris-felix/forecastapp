@@ -3,6 +3,10 @@
 	border-bottom: 1px #000000 solid;
 	list-style-type: none;
 
+	&:last-child {
+		border-bottom: none;
+	}
+
 	& {
 		.header {
 			padding-top: 5px;
@@ -11,12 +15,20 @@
 
 			.day--detail,
 			.temp--detail {
+				@media screen and (max-width: 500px) {
+					padding: 0px;
+				}
+
 				b, span {
 					padding: 0px;
 				}
 
 				b {
 					margin-right: 60px;
+
+					@media screen and (max-width: 500px) {
+						margin-right: 10px;
+					}
 				}
 			}
 		}
@@ -24,6 +36,10 @@
 		.details {
 			padding-top: 5px;
 			padding-bottom: 5px;
+
+			.weather {
+				color: #FFFFFF;
+			}
 		}
 	}	
 
