@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-const { string, object } = PropTypes;
+const { string, number } = PropTypes;
 
 import { kebabCase } from 'lodash';
 
@@ -22,7 +22,8 @@ const Highlight = ({ temp, description, city }) => {
 }
 
 Highlight.propTypes = {
-	current: object,
+	temp: number.isRequired,
+	description: string.isRequired,
 	city: string.isRequired
 }.isRequired
 

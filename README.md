@@ -1,7 +1,7 @@
 # Forecast App
 A simple web application showing the next 5 days forecast of a specific location in the world
 
-![](https://cloud.githubusercontent.com/assets/736122/17689295/86f115ee-637e-11e6-993d-b244e9eafd91.png)
+![](https://cloud.githubusercontent.com/assets/736122/17691569/28a25bec-638d-11e6-9767-91946800e693.png)
 
 ## DESCRIPTION
 
