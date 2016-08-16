@@ -1,0 +1,99 @@
+.day {
+	font-family: 'DINNextLTPro-Regular';
+	margin: 0px;
+	border-bottom: 1px #000000 solid;
+	list-style-type: none;
+
+	&:last-child {
+		border-bottom: none;
+	}
+
+	& {
+		.header {
+			padding-top: 5px;
+			padding-bottom: 5px;
+			overflow: hidden;
+			border-bottom: 1px solid;
+
+			@media screen and (max-width: 992px) {
+				padding-top: 20px;
+				padding-bottom: 10px;
+			}
+
+			.day--detail,
+			.temp--detail {
+				@media screen and (max-width: 500px) {
+					padding: 0px;
+				}
+
+				b, span {
+					padding: 0px;
+				}
+
+				b {
+					margin-right: 60px;
+
+					@media screen and (max-width: 500px) {
+						margin-right: 10px;
+					}
+				}
+			}
+		}
+
+		.details {
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+	}	
+
+	&.today {
+		.header {
+			border-bottom: 1px #000000 solid;
+		}
+	}	
+}
+
+.early-morning {
+	.day {
+		.header {
+			border-color: #96c2dc;
+		}
+
+		border-color: #6f6f6f;
+	}
+}
+
+.morning {
+	.day {
+		.header {
+			border-color: #4e7084;
+		}
+
+		border-color: #000000;
+	}
+}
+
+.afternoon {
+	.day {
+		.header {
+			border-color: #0065a2;
+		}
+
+		border-color: #0065a2;
+	}	
+}
+
+.evening {
+	.day {
+		.details {
+			color: #5a89a5;
+		}
+
+		.header {
+			color: #FFFFFF;
+			border-color: #003352;
+		}
+
+		border-color: #003352;
+	}
+}

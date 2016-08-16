@@ -1,0 +1,41 @@
+#root {
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+	opacity: 0;
+
+	@include transition-property(opacity);
+	@include transition-duration(0.5s);
+	@include transition-timing-function(ease-in);
+
+	.background {
+		height: 400vh;
+		@include background-image(linear-gradient(0deg, #001665 0%, #1f9edb 45%, #93e9ea 75%));
+		@include transition-property(background, opacity);
+		@include transition-duration(0.5s);
+		@include transition-timing-function(ease-in);
+	}
+
+	&.early-morning,
+	&.morning,
+	&.afternoon,
+	&.evening {
+		opacity: 1;
+	}
+
+  	&.early-morning .background {
+  		background-position-y: -500px;
+  	}
+
+	&.morning .background {
+		background-position-y: -900px;
+	}
+
+	&.afternoon .background {
+		background-position-y: -1200px;
+	}
+
+	&.evening .background {
+		background-position-y: -1900px;
+	}
+}

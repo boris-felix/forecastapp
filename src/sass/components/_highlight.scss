@@ -1,0 +1,32 @@
+.highlight {
+	color: #FFFFFF;
+	margin-top: 20px;
+	margin-bottom: 20px;
+
+	.city {
+		font-family: 'DINNextLTPro-Bold';
+		font-size: 40px;
+	}
+
+	.description {
+		font-family: 'DINNextLTPro-Light';
+		span {
+			margin-right: 10px;
+		}
+
+		i {
+			font-size: 24px;
+			@include text-shadow(#618788 1px 1px 2px);
+		}
+	}
+
+	.temperature {
+		font-size: 35px;
+	}
+}
+
+.early-morning {
+	.highlight {
+		color: #000000;
+	}
+}

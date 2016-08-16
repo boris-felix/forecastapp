@@ -1,0 +1,10 @@
+.DS_Store
+node_modules/
+public/js
+public/css
+public/index.html
+!*/fonts
+/fonts
+npm-debug.log
+dist
+.sass-cache

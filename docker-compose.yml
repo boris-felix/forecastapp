@@ -1,0 +1,25 @@
+version: '2'
+services:
+    app:
+        build:
+            context: .
+            dockerfile: /deploy/app/Dockerfile
+        environment:
+            - DEBUG=false
+            - NODE_ENV=production
+        command: npm run build
+        volumes:
+            - /var/www
+    nginx:
+        build:
+            context: .
+            dockerfile: /deploy/nginx/Dockerfile
+        environment:
+            - DEBUG=false
+        ports:
+            - "8080:8080"
+        depends_on:
+            - app
+        volumes_from:
+            - app
+        restart: always
