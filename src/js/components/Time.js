@@ -4,16 +4,20 @@ const { shape, arrayOf, string, number } = PropTypes;
 import { kebabCase } from 'lodash';
 import Moment from 'moment';
 
-const Time = ({ hour, temp, weather }) => {
+const Time = ({ index, hour, temp, weather }) => {
 	let { description } = weather[0];
 	let time = Moment(hour, 'HH:mm').format('HH:mm');
 	let weatherIcon = [
 		'icon meteocons',
 		kebabCase(description)
 	].join(' ');
+	let timeClassName = [
+		'time col-md-1 col-sm-2 col-xs-2',
+		(index > 5 ? 'hidden-xs hidden-sm' : '')
+	].join(' ');
 
 	return (
-		<li className="time col-md-1 col-sm-2 col-xs-2">
+		<li className={timeClassName}>
 			<div>{ time }</div>
 			<div className="weather text">
 				<i title={description} className={weatherIcon}></i>

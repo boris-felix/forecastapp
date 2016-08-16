@@ -12,6 +12,12 @@
 			padding-top: 5px;
 			padding-bottom: 5px;
 			overflow: hidden;
+			border-bottom: 1px solid;
+
+			@media screen and (max-width: 992px) {
+				padding-top: 20px;
+				padding-bottom: 10px;
+			}
 
 			.day--detail,
 			.temp--detail {
@@ -36,10 +42,6 @@
 		.details {
 			padding-top: 5px;
 			padding-bottom: 5px;
-
-			.weather {
-				color: #FFFFFF;
-			}
 		}
 	}	
 
@@ -50,11 +52,47 @@
 	}	
 }
 
+.early-morning {
+	.day {
+		.header {
+			border-color: #96c2dc;
+		}
+
+		border-color: #6f6f6f;
+	}
+}
+
+.morning {
+	.day {
+		.header {
+			border-color: #4e7084;
+		}
+
+		border-color: #000000;
+	}
+}
+
+.afternoon {
+	.day {
+		.header {
+			border-color: #0065a2;
+		}
+
+		border-color: #0065a2;
+	}	
+}
+
 .evening {
 	.day {
-		.header,
 		.details {
-			color: #757575
+			color: #5a89a5;
 		}
+
+		.header {
+			color: #FFFFFF;
+			border-color: #003352;
+		}
+
+		border-color: #003352;
 	}
 }

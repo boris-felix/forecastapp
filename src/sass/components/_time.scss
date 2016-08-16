@@ -1,11 +1,23 @@
 .time {
 	list-style-type: none;
 	padding: 0px;
+	font-size: 12px;
+
+	& > div {
+		width: 45px;
+		text-align: center;
+	}
 
 	& .weather {
-		font-size: 25px;
-    	line-height: 30px;
+		font-size: 20px;
+    	color: #FFFFFF;
+    	padding-top: 5px;
     	padding-bottom: 5px;
-    	padding-left: 5px;
+
+		.icon {
+			width: 45px;
+			display: block;
+			text-align: center;
+		}
 	}
 }

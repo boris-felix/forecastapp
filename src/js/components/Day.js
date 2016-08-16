@@ -31,11 +31,13 @@ const Day = ({ forecast, date }) => {
 				<ul className="row">
 					{_.map(forecast, (time, id) => {
 						let { hour, temp, weather } = time;
+
 						return <Time 
 							preview={preview}
 							hour={hour}
 							temp={temp}
 							weather={weather}
+							index={id}
 							key={id}
 						/>;
 					})}

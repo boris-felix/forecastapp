@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha --compilers js:babel-core/register src/**/__tests__",
     "start": "webpack -p",
-    "start:dev": "webpack -p && webpack-dev-server --inline --hot --port 9001",
+    "start:dev": "webpack -p  && webpack-dev-server --inline --hot --port 9001",
     "build": "npm install && NODE_ENV=production grunt release:prod"
   },
   "repository": {

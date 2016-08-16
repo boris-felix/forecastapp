@@ -25,7 +25,7 @@ class ForecastApp {
 		const init = () => {
 			DataFeeder.fetch(Store, city);
 			// Fetch new datas every hours is enough
-			domContainer.className = mapDayTime();
+			setTimeout(() => domContainer.className = mapDayTime(), 500);
 		};
 
 		init();

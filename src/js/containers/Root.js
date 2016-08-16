@@ -10,6 +10,7 @@ const Root = (element, store, city) => {
 			<div>
 				<Highlight city={city}/>
 				<ForecastList />
+				<div className="background"></div>
 			</div>
 		</Provider>,
 		element

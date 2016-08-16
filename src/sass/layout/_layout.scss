@@ -1,29 +1,41 @@
-@import "compass/css3";
-
 #root {
-	background-color: #2db1ff;
 	height: 100vh;
 	width: 100vw;
-	overflow-x: hidden;
-	overflow-y: scroll;
+	overflow: hidden;
+	opacity: 0;
 
-	@include transition-property(background-color);
+	@include transition-property(opacity);
 	@include transition-duration(0.5s);
-  	@include transition-timing-function(ease-in);
+	@include transition-timing-function(ease-in);
 
-  	&.early-morning {
-  		background-color: #00a0ff;
+	.background {
+		height: 400vh;
+		@include background-image(linear-gradient(0deg, #001665 0%, #1f9edb 45%, #93e9ea 75%));
+		@include transition-property(background, opacity);
+		@include transition-duration(0.5s);
+		@include transition-timing-function(ease-in);
+	}
+
+	&.early-morning,
+	&.morning,
+	&.afternoon,
+	&.evening {
+		opacity: 1;
+	}
+
+  	&.early-morning .background {
+  		background-position-y: -500px;
   	}
 
-	&.morning {
-		background-color: #2db1ff;
+	&.morning .background {
+		background-position-y: -900px;
 	}
 
-	&.afternoon {
-		background-color: #1475af;
+	&.afternoon .background {
+		background-position-y: -1200px;
 	}
 
-	&.evening {
-		background-color: #002840;
+	&.evening .background {
+		background-position-y: -1900px;
 	}
 }

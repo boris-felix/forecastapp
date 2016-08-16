@@ -6,7 +6,7 @@ import Day from './Day';
 
 const ForecastList = ({ list }) => {
 	return (
-		<ol className="col-md-12 col-sm-12 col-xs-12">
+		<ol className="list col-md-12 col-sm-12 col-xs-12">
 			{_.map(list, (forecast, date, list) => {
 				return (
 					<Day forecast={forecast} date={date} key={date} />
