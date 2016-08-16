@@ -24,12 +24,17 @@
 		<![endif]-->
 	</head>
 	<body>
-		<div id="root"></div>
+		<div id="root" ng-view>
+			<div>
+				<forecast-list></forecast-list>
+				<div class="background"></div>
+			</div>
+		</div>
 		<!-- build:[src] /js/forecastapp.min.js?v=$BANNER -->
 		<script src="/js/forecastapp.js"></script>
 		<!-- /build -->
 		<script type="text/javascript">
-			var app = new ForecastApp('root', 'Biarritz');
+			var app = new ForecastApp('Biarritz');
 		</script>
 	</body>
 </html>

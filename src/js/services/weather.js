@@ -1,14 +1,10 @@
-import { chain, size, toArray } from 'lodash';
-import {
-    CURRENT,
-    FORECAST
-} from '../constants/actionTypes';
+import { chain, size } from 'lodash';
 
 const APP_ID = 'a898a3523830662b0223c37cfea04659';
 
-class DataFeeder {
-	static fetch (store, city) {
-		DataFeeder.get(city).then((r) => {
+class WeatherService {
+	static fetch (city) {
+		return WeatherService.get(city).then((r) => {
 			let { list } = r;
 			let values = chain(list)
 				.map(({ dt_txt, main, weather }) => {
@@ -26,17 +22,7 @@ class DataFeeder {
 				.groupBy('day')
 				.value();
 
-			store.dispatch({
-				type: FORECAST,
-				values: values
-			});
-
-			if (size(values) > 0) {
-				store.dispatch({
-					type: CURRENT,
-					values: toArray(values)[0]
-				});
-			}
+			return values;
 		});
 	}
 
@@ -48,4 +34,4 @@ class DataFeeder {
 	}
 }
 
-export default DataFeeder;
+export default WeatherService;

@@ -1,8 +1,7 @@
-import ReactDOM from 'react-dom';
-import Root from './containers/Root';
-import DataFeeder from './initializer/DataFeeder';
-import Store from './store';
+import angular from 'angular';
+import jquery from 'jquery';
 import Moment from 'moment';
+import Directives from './directives';
 
 const mapDayTime = () => {
 	var time = parseInt(Moment().format('HH'), 10);
@@ -19,24 +18,22 @@ const mapDayTime = () => {
 };
 
 class ForecastApp {
-	constructor (domContainerId, city) {
-		let domContainer = document.getElementById(domContainerId);
+	constructor (city) {
+		var app = angular.module('ForecastApp', [
+			'appDirectives'
+		]);
 
-		const init = () => {
-			DataFeeder.fetch(Store, city);
-			// Fetch new datas every hours is enough
-			setTimeout(() => domContainer.className = mapDayTime(), 500);
-		};
+		// As per : https://medium.com/swlh/improving-angular-performance-with-1-line-of-code-a1fb814a6476#.5kfftot3t
+		app.config(['$compileProvider', function ($compileProvider) {
+			$compileProvider.debugInfoEnabled(false);
+		}]);
 
-		init();
+		app.run(function($rootScope) {
+			$rootScope.city = city;
+			angular.element('#root').addClass(mapDayTime());
+		});
 
-		let dataFeed = setInterval(() => init(), 3600 * 1000);
-
-		// Connect React dom render to redux store
-		setTimeout(
-			() => Root(domContainer, Store, city),
-			300
-		);
+		angular.bootstrap(document, ['ForecastApp']);	
 	}
 };
 
