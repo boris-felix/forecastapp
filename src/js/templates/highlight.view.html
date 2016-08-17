@@ -1,0 +1,8 @@
+<div class="highlight text-center col-md-12 col-sm-12 col-xs-12">
+	<div class="city"><b>{{ city }}</b></div>
+	<div ng-if="description" class="description">
+		<span>{{ description }}</span>
+		<i title="{{ description }}" ng-class="weathericon"></i>
+	</div>
+	<div ng-if="temp" class="temperature">{{ temp }}°</div>
+</div>

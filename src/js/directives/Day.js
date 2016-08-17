@@ -7,22 +7,6 @@ const isToday = (day) => {
 	return Moment().format('dddd') === day.format('dddd');
 };
 
-const TimeList = (forecast) => {
-	if (forecast.length > 0) {
-		return map(forecast, (time, id) => {
-			let { hour, temp, weather } = time;
-
-			return <Time 
-				hour={hour}
-				temp={temp}
-				weather={weather}
-				index={id}
-				key={id}
-			/>;
-		});
-	}
-};
-
 const getTempMinMax = (forecast) => {
 	if (forecast.length > 0) {
 		let { temp_max, temp_min } = forecast[0];
@@ -35,7 +19,7 @@ const getTempMinMax = (forecast) => {
 	return {
 		temp_max: '',
 		temp_min: ''
-	}
+	};
 };
 
 export default ['day', ($rootScope) => {
@@ -43,16 +27,15 @@ export default ['day', ($rootScope) => {
 		let day = Moment(attrs.date, 'YYYY-MM-DD');
 
 		scope.isToday = isToday;
-		scope.TimeList = TimeList;
 		scope.getTempMinMax = getTempMinMax;
 
 		scope.dayLabel = day.format('dddd');
 		scope.todayLabel = scope.isToday(day) ? 'Today' : '';
-		scope.forecast = attrs.forecast;
-		scope.temp_max = 32;
-		scope.temp_min = 20;
 
-		//let { temp_max, temp_min } = getTempMinMax(forecast);
+		let { temp_max, temp_min } = getTempMinMax(scope.forecast);
+		scope.temp_max = temp_max;
+		scope.temp_min = temp_min;
+
 		scope.dayClassName = [
 			'day',
 			scope.todayLabel.toLowerCase()
@@ -60,7 +43,9 @@ export default ['day', ($rootScope) => {
 	};
 
 	return {
-		scope: {},
+		scope: {
+			forecast: '=forecast'
+		},
 		link: link,
 		replace: true,
 		templateUrl: tpl

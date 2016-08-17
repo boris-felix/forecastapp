@@ -1,5 +1,9 @@
-<ol className="list col-md-12 col-sm-12 col-xs-12">
-	<ng-repeat ng-repeat="(date, day) in days track by $index">
-		<day date="{{ date }}"></day>
-	</ng-repeat>
-</ol>
+<div>
+	<highlight current="current"></highlight>
+	<ol class="list col-md-12 col-sm-12 col-xs-12">
+		<ng-repeat ng-repeat="(date, day) in days track by $index">
+			<day date="{{ date }}" forecast="day"></day>
+		</ng-repeat>
+	</ol>
+	<div class="background"></div>
+</div>

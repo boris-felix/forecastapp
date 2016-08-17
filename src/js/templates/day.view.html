@@ -11,7 +11,14 @@
 	</div>
 	<div class="details">
 		<ul class="row">
-			
+			<ng-repeat ng-repeat="(id, time) in forecast track by id">
+				<time
+					hour="time.hour"
+					temp="time.temp"
+					weather="time.weather"
+					index="id"
+				></time>
+			</ng-repeat>
 		</ul>
 	</div>
 </li>
