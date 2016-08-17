@@ -1,7 +1,9 @@
+import Moment from 'moment';
 import { chain, size, toArray } from 'lodash';
 import {
     CURRENT,
-    FORECAST
+    FORECAST,
+    DAY_TIME
 } from '../constants/actionTypes';
 
 const APP_ID = 'a898a3523830662b0223c37cfea04659';
@@ -37,6 +39,11 @@ class DataFeeder {
 					values: toArray(values)[0]
 				});
 			}
+
+			store.dispatch({
+				type: DAY_TIME,
+				time: parseInt(Moment().format('HH'), 10)
+			});
 		});
 	}
 

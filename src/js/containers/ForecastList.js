@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import ForecastList from '../components/ForecastList';
 
 const ForecastListContainer = (props) => <ForecastList {...props} />
-const a = ({ forecast }) => ({ list: forecast.list });
+const a = ({ forecast, daytime }) => ({ list: forecast.list, daytime });
 
 const Container = connect(a)(ForecastListContainer);
 

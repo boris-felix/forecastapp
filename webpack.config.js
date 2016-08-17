@@ -12,7 +12,7 @@ module.exports = {
 	output : {
 		filename: 'forecastapp.js',
 		path: path.resolve('public/js'),
-		publicPath: "/public/"
+		publicPath: "/js/"
 	},
 	module: {
 		loaders: [

@@ -2,11 +2,6 @@
 	height: 100vh;
 	width: 100vw;
 	overflow: hidden;
-	opacity: 0;
-
-	@include transition-property(opacity);
-	@include transition-duration(0.5s);
-	@include transition-timing-function(ease-in);
 
 	.background {
 		height: 400vh;
@@ -16,26 +11,33 @@
 		@include transition-timing-function(ease-in);
 	}
 
-	&.early-morning,
-	&.morning,
-	&.afternoon,
-	&.evening {
+	> div {
+		opacity: 0;
+		@include transition-property(opacity);
+		@include transition-duration(0.5s);
+		@include transition-timing-function(ease-in);
+	}
+
+	& .early-morning,
+	& .morning,
+	& .afternoon,
+	& .evening {
 		opacity: 1;
 	}
 
-  	&.early-morning .background {
+  	& .early-morning .background {
   		background-position-y: -500px;
   	}
 
-	&.morning .background {
+	& .morning .background {
 		background-position-y: -900px;
 	}
 
-	&.afternoon .background {
+	& .afternoon .background {
 		background-position-y: -1200px;
 	}
 
-	&.evening .background {
+	& .evening .background {
 		background-position-y: -1900px;
 	}
 }
