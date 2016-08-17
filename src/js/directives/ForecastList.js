@@ -3,16 +3,16 @@ import tpl from '../templates/forecast-list.view.html';
 import WeatherService from '../services/weather';
 import { toArray, size } from 'lodash';
 
-export default ['forecastList', ($rootScope, $timeout) => {
+export default ['forecastList', ($rootScope, $timeout, WeatherService) => {
 	const link = (scope, element, attrs) => {
-		scope.POLL_INTERVAL = 3 * 1000;
+		scope.POLL_INTERVAL = 3600 * 1000;
 		scope.current = [];
 
 		scope.fetchDatas = () => {
 			WeatherService.fetch(
 				$rootScope.city
 			).then((values) => {
-				scope.$apply(scope.updateDatas.bind(this, values));
+				$timeout(scope.updateDatas(values));
 			});
 		};
 

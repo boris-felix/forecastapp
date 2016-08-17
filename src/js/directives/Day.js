@@ -10,10 +10,11 @@ const isToday = (day) => {
 const getTempMinMax = (forecast) => {
 	if (forecast.length > 0) {
 		let { temp_max, temp_min } = forecast[0];
+
 		return {
 			temp_max,
 			temp_min
-		}
+		};
 	}
 
 	return {
@@ -26,11 +27,8 @@ export default ['day', ($rootScope) => {
 	const link = (scope, element, attrs) => {
 		let day = Moment(attrs.date, 'YYYY-MM-DD');
 
-		scope.isToday = isToday;
-		scope.getTempMinMax = getTempMinMax;
-
 		scope.dayLabel = day.format('dddd');
-		scope.todayLabel = scope.isToday(day) ? 'Today' : '';
+		scope.todayLabel = isToday(day) ? 'Today' : '';
 
 		let { temp_max, temp_min } = getTempMinMax(scope.forecast);
 		scope.temp_max = temp_max;

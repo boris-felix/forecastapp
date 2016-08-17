@@ -4,7 +4,7 @@
   "description": "A simple web application showing the next 5 days forecast of a specific location in the world",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register src/**/__tests__",
+    "test": "karma start karma.conf.js --log-level debug",
     "start": "webpack -p",
     "start:dev": "webpack -p  && webpack-dev-server --inline --hot --port 9001",
     "build": "npm install && NODE_ENV=production grunt release:prod"
@@ -33,6 +33,7 @@
     "ng-annotate": "^1.2.1"
   },
   "devDependencies": {
+    "angular-mocks": "~1.4.0",
     "babel-cli": "^6.11.4",
     "babel-core": "^6.13.2",
     "babel-loader": "^6.2.4",
@@ -41,9 +42,6 @@
     "babel-preset-stage-0": "^6.5.0",
     "babel-runtime": "^6.11.6",
     "chai": "^3.5.0",
-    "chai-enzyme": "^0.5.0",
-    "envify": "^3.4.1",
-    "enzyme": "^2.4.1",
     "exports-loader": "^0.6.2",
     "expose-loader": "^0.7.1",
     "grunt": "^1.0.1",
@@ -59,9 +57,21 @@
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.22.0",
     "imports-loader": "^0.6.5",
-    "mocha": "^3.0.2",
+    "jasmine-core": "^2.4.1",
+    "jasmine-node": "^1.14.5",
+    "karma": "~0.13.0",
+    "karma-html2js-preprocessor": "~0.1.0",
+    "karma-jasmine": "0.3.5",
+    "karma-junit-reporter": "*",
+    "karma-ng-html2js-preprocessor": "^0.1.2",
+    "karma-phantomjs-launcher": "^0.2.0",
+    "karma-script-launcher": "~0.1.0",
+    "karma-spec-reporter": "0.0.24",
+    "karma-webpack": "^1.7.0",
     "ng-annotate-loader": "^0.1.1",
     "ngtemplate-loader": "^1.3.1",
+    "phantomjs": "^1.9.17",
+    "phantomjs-polyfill": "0.0.1",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   }
