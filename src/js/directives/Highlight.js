@@ -2,7 +2,7 @@ import angular from 'angular';
 import tpl from '../templates/highlight.view.html';
 import { kebabCase } from 'lodash';
 
-export default ['highlight', ($rootScope) => {
+export default ['highlight', ['$rootScope', ($rootScope) => {
 	const link = (scope, element, attrs) => {
 		scope.city = $rootScope.city;
 
@@ -30,4 +30,4 @@ export default ['highlight', ($rootScope) => {
 		replace: true,
 		templateUrl: tpl
 	};
-}];
+}]];

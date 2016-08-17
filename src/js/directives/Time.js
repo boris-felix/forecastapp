@@ -3,7 +3,7 @@ import tpl from '../templates/time.view.html';
 import Moment from 'moment';
 import { kebabCase } from 'lodash';
 
-export default ['time', ($rootScope) => {
+export default ['time', () => {
 	const link = (scope, element, attrs) => {
 		let { description } = scope.weather[0];
 		scope.time = Moment(scope.hour, 'HH:mm').format('HH:mm');

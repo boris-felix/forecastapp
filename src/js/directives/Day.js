@@ -23,7 +23,7 @@ const getTempMinMax = (forecast) => {
 	};
 };
 
-export default ['day', ($rootScope) => {
+export default ['day', ['$rootScope', ($rootScope) => {
 	const link = (scope, element, attrs) => {
 		let day = Moment(attrs.date, 'YYYY-MM-DD');
 
@@ -48,4 +48,4 @@ export default ['day', ($rootScope) => {
 		replace: true,
 		templateUrl: tpl
 	};
-}];
+}]];

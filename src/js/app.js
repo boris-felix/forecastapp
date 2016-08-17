@@ -28,10 +28,10 @@ class ForecastApp {
 			$compileProvider.debugInfoEnabled(false);
 		}]);
 
-		app.run(function($rootScope) {
+		app.run(['$rootScope', function($rootScope) {
 			$rootScope.city = city;
 			angular.element('#root').addClass(mapDayTime());
-		});
+		}]);
 
 		angular.bootstrap(document, ['ForecastApp']);	
 	}
