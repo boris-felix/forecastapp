@@ -22,16 +22,22 @@ When that is done install the npm dependencies :
 npm install
 ```
 
-Then for running the http server and the js auto compilation :
+Then compile the css like this
+
+```
+compass watch --force
+```
+
+And into a separate tab, for running the http server and the js auto compilation do this :
 
 ```
 npm run start:dev
 ```
 
-For compiling the css, run this into a separate tab
+You can now see your application running by opening a page on your prefered browser here :
 
 ```
-compass watch --force
+http://localhost:9001/debug.html
 ```
 
 ### RELEASE TO PRODUCTION
@@ -48,7 +54,11 @@ Then run this :
 ./deploy/run.prod.sh
 ```
 
-That will install all the dependencies to build the project (Javascripts files and Css linting and minification) and the http server ( Nginx ) and then run the web server.
+That will install all the dependencies to build the project (Javascripts files and Css linting and minification) and the http server ( Nginx ) and then run the web server. The application will then be accessible on the port 8080 :
+
+```
+http://${SERVER IP}:8080
+```
 
 ### NOTE
 
